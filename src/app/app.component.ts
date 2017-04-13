@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import{ AppService } from './app.service'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private appservice: AppService) {};
+  profile = {};
+
+  loadUser(){
+    this.appservice.getUser().subscribe(data => this.profile =  data);
+  }
+
   title = 'app works!';
 }
