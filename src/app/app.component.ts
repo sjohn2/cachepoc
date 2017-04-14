@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import{ AppService } from './app.service'
+import{ AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import{ AppService } from './app.service'
 export class AppComponent {
 
   constructor(private appservice: AppService) {};
-  profile = {};
+  users = {};
 
-  loadUser(){
-    this.appservice.getUser().subscribe(data => this.profile =  data);
+  loadUser(flag){
+    this.appservice.getUser(flag).subscribe(data => this.users =  data);
   }
 
   title = 'app works!';

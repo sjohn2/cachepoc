@@ -1,8 +1,19 @@
 <h1>
   Hero Names
 </h1>
-<button (click)="loadUser()">Get Names</button>
+<div>
+  After first click, this method won't make http request and serve the data from browser cache. 
+  <button (click)="loadUser()">Cached Version</button>
+</div>
+<div>
+  Every click makes a request to server
+  <button (click)="loadUser('true')"> Reload from server</button>
+</div>
+
 <ul>
- 
+
 </ul>
-{{ profile | json }}
+{{ users | json }}
+
+
+
